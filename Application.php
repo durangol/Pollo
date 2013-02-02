@@ -1,8 +1,9 @@
 <?php
 namespace Pollo;
 
-use \Pollo\Application\Bootstrap;
-use \Pollo\Application\FrontController;
+use \Pollo\Application\Bootstrap\Abstract as Bootstrap;
+use \Pollo\Application\Mvc\FrontController;
+use \Pollo\Application\Mvc\Dispatcher\Abstract as Dispatcher;
 
 /**
  * A facade to provide a simple interface
@@ -11,15 +12,15 @@ class Application
 {
     /**
      * An instance of a Bootstrap
-     * @var \Pollo\Application\Bootstrap
+     * @var \Pollo\Application\Bootstrap\Abstract
      */
     protected $_bootstrap;
 
     /**
-     * An instance of a FrontController
-     * @var \Pollo\Application\Mvc\FrontController
+     * An instance of the a Dispatcher
+     * @var \Pollo\Application\Mvc\Dispatcher\Abstract
      */
-    protected $_frontController;
+    protected $_dispatcher;
 
     /**
      * The environment varaible
@@ -29,14 +30,14 @@ class Application
 
     /**
      * Constructor
-     * @param \Pollo\Application\Bootstrap              $bootstrap
-     * @param \Pollo\Application\Mvc\FrontController    $frontController
-     * @param string                                    $environment
+     * @param \Pollo\Application\Bootstrap\Abstract         $bootstrap
+     * @param \Pollo\Application\Mvc\Dispatcher\Abstract    $dispatcher
+     * @param string                                        $environment
      */
-    public function __construct(Bootstrap $bootstrap, FrontController $frontController, $environment)
+    public function __construct(Bootstrap $bootstrap, Dispatcher $dispatcher, $environment)
     {
         $this->_bootstrap = $bootstrap;
-        $this->_frontController = $frontController;
+        $this->_dispatcher = $dispatcher;
         $this->_environment = $environment;
     }
 
@@ -45,5 +46,9 @@ class Application
      */
     public function run()
     {
+        $this->_bootstrap->run($this->_environment);
+        FrontController::getInstance()->setBootstrap($this->_bootstrap)
+                                      ->setDispatcher($this->_dispatcher)
+                                      ->dispatch();
     }
 }

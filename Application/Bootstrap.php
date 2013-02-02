@@ -24,10 +24,20 @@ class Boostrap
 
     /**
      * Returns the config object
+     * @return \Pollo\Application\Config
      */
     public function getConfig()
     {
         return $this->_config;
+    }
+
+    /**
+     * Bootstraps the application
+     * @param string $environment
+     */
+    public function run($environment)
+    {
+        
     }
 }
 
