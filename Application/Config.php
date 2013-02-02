@@ -69,6 +69,7 @@ class Config extends Collection
         foreach ($config as $key => $value) {
             if ($this->_data[$key] instanceof Config && $value instanceof Config) {
                 $this->_data[$key]->merge($value);
+                continue;
             }
             $this->_data[$key] = $value;
         }
