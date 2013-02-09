@@ -1,6 +1,8 @@
 <?php
 
-Interface AutoloaderInterface
+namespace Pollo\Autoloader;
+
+interface AutoloaderInterface
 {
     function autoload($class);
 }
