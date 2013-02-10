@@ -7,6 +7,6 @@ class StandardAutoloader implements AutoloaderInterface
 {
     public function autoload($class)
     {
-        require_once('/' . str_replace('\\', '/', $class) . '.php');
+        require_once(str_replace('\\', '/', $class) . '.php');
     }
 }

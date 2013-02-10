@@ -14,11 +14,8 @@ class Autoloader
 
     public function autoload($class)
     {
-        echo get_include_path();
-        echo ('/' . str_replace('\\', '/', $class) . '.php'); exit;
-
         foreach($this->_autoloaders as $autoloader) {
-            if ($autoloader instanceof \Pollo\Autoloado\Autoloader\Autoloaderinterface) {
+            if ($autoloader instanceof \Pollo\Autoloader\Autoloaderinterface) {
                 $autoloader->autoload($class);
             } 
             else if (is_callable($autoloader)) {
