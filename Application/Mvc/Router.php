@@ -1,9 +1,13 @@
 <?php
 namespace \Pollo\Application\Mvc;
 
-use \Pollo\Application\Mvc\Router\RouteInterface;
+use \Pollo\Application\Mvc\Router\Interface;
+use \Pollo\Request\Interface as Request;
 
-class Router
+/**
+ * A concrete router that implements the router interface
+ */
+class Router implements Interface
 {
     /**
      * Array of routes
@@ -20,11 +24,19 @@ class Router
         $this->addRoutes($routes);
     }
 
-    public function addRoute(RouteInterface $route)
+    /**
+     * Adds a route to the array of routes
+     * @param Pollo\Application\Mvc\Router\Interface $route
+     */
+    public function addRoute(Interface $route)
     {
         $this->_routes[] = $route;
     }
 
+    /**
+     * A wrapper for for addRoute. Does the same thing but for an array of routes.
+     * @param array $routes
+     */
     public function addRoutes(array $routes)
     {
         foreach($routes as $route) {
@@ -32,12 +44,16 @@ class Router
         }
     }
 
-    public function removeRoute($route)
+    /**
+     * Removes a route
+     * @param Pollo\Application\Mvc\Router\Interface $route
+     */
+    public function removeRoute(Interface $route)
     {
 
     }
 
-    public function matchRoute($request)
+    public function matchRoute(Request $request)
     {
         
     }

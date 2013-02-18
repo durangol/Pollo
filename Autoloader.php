@@ -15,9 +15,9 @@ class Autoloader
     protected $_autoloaders = array();
 
     /**
-     * Optoinally adds autoloaders to the array and registers itself to the
+     * Optionally adds autoloaders to the array and registers itself to the
      * autoloader stack.
-     * @param array $autoloaders autoloader to add
+     * @param array $autoloaders An optional array of autoloaders to add
      */
     public function __construct(array $autoloaders = array())
     {
@@ -30,7 +30,7 @@ class Autoloader
     /**
      * checks each autoloader if its an instance of \Pollo\Autoloader\Autoloaderinterface
      * or if its callable. 
-     * @param  string $class the path to the class you want to load 
+     * @param  string $class The path to the class you want to load 
      */
     public function autoload($class)
     {
@@ -46,8 +46,8 @@ class Autoloader
 
     /**
      * Add another autoloader
-     * @param string $key        the index of the autoloader array
-     * @param mixed $autoloader  its an instance of Autoloader Interface or a callable 
+     * @param string $key        The index of the autoloader array
+     * @param mixed $autoloader  An instance of Autoloader Interface or a callable 
      */
     public function addAutoloader($key, $autoloader)
     {
@@ -59,7 +59,7 @@ class Autoloader
 
     /**
      * removes Autoloader
-     * @param  string $key the index of the autoloader you want to remove
+     * @param  string $key The index of the autoloader you want to remove
      */
     public function removeAutoloader($key)
     {

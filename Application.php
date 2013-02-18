@@ -6,7 +6,7 @@ use \Pollo\Application\Mvc\FrontController;
 use \Pollo\Application\Mvc\Dispatcher\Abstract as Dispatcher;
 
 /**
- * A facade to provide a simple interface
+ * A facade to provide a simple interface for a Pollo Application
  */
 class Application
 {

@@ -9,6 +9,7 @@ use \Pollo\Application;
 class Boostrap
 {
     /**
+     * The application config object
      * @var \Pollo\Application\Config
      */
     protected $_config;
