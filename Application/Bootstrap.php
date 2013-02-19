@@ -1,7 +1,5 @@
 <?php
-namespace \Pollo\Application;
-
-use \Pollo\Application;
+namespace Pollo\Application;
 
 /**
  * A Bootstrap class to set up a Pollo Application

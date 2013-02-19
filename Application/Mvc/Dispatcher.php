@@ -1,30 +1,33 @@
 <?php
-namespace \Pollo\Application\Mvc;
-use \Pollo\Application\Mvc\Dispatcher\Interface;
+namespace Pollo\Application\Mvc;
+use \Pollo\Application\Mvc\Dispatcher\DispatcherInterface;
+use \Pollo\Request\RequestInterface;
+use \Pollo\Response\ResponseInterface;
+
 
 /**
  * A concrete Dispatcher
  */
-class Dispatcher implements Interface
+class Dispatcher implements DispatcherInterface
 {
     /**
      * The request object in which the dispatcher will handle
-     * @var \Pollo\Request\Interface
+     * @var \Pollo\Request\RequestInterface
      */
 	protected $_request;
 
     /**
      * The response object in which the dispatcher will handle
-     * @var \Pollo\Response\Interface
+     * @var \Pollo\Response\ResponseInterface
      */
 	protected $_response;
 
     /**
      * Constructor
-     * @param \Pollo\Request\Interface  $request  The request object
-     * @param \Pollo\Response\Interface $response The response object
+     * @param \Pollo\Request\RequestInterface   $request  The request object
+     * @param \Pollo\Response\ResponseInterface $response The response object
      */
-	public function __construct(\Pollo\Request\Interface $request, \Pollo\Response\Interface $response)
+	public function __construct(RequestInterface $request, ResponseInterface $response)
 	{
 		$this->_request = $request;
 		$this->_response = $response;

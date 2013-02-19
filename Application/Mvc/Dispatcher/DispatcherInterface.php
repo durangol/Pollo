@@ -1,10 +1,10 @@
 <?php
-namespace \Pollo\Application\Mvc\Dispatcher;
+namespace Pollo\Application\Mvc\Dispatcher;
 
 /**
  * The Dispatcher interface
  */
-interface Interface
+interface DispatcherInterface
 {
     /**
      * This function should handle the instantiation of a controller.

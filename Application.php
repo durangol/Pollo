@@ -1,9 +1,9 @@
 <?php
 namespace Pollo;
 
-use \Pollo\Application\Bootstrap\Abstract as Bootstrap;
+use \Pollo\Application\Bootstrap\BootstrapInterface as Bootstrap;
 use \Pollo\Application\Mvc\FrontController;
-use \Pollo\Application\Mvc\Dispatcher\Abstract as Dispatcher;
+use \Pollo\Application\Mvc\Dispatcher\DispatcherInterface as Dispatcher;
 
 /**
  * A facade to provide a simple interface for a Pollo Application
@@ -12,13 +12,13 @@ class Application
 {
     /**
      * An instance of a Bootstrap
-     * @var \Pollo\Application\Bootstrap\Abstract
+     * @var \Pollo\Application\Bootstrap\BootstrapInterface
      */
     protected $_bootstrap;
 
     /**
      * An instance of the a Dispatcher
-     * @var \Pollo\Application\Mvc\Dispatcher\Abstract
+     * @var \Pollo\Application\Mvc\Dispatcher\DispatcherInterface
      */
     protected $_dispatcher;
 
@@ -30,9 +30,9 @@ class Application
 
     /**
      * Constructor
-     * @param \Pollo\Application\Bootstrap\Abstract         $bootstrap
-     * @param \Pollo\Application\Mvc\Dispatcher\Abstract    $dispatcher
-     * @param string                                        $environment
+     * @param \Pollo\Application\Bootstrap\BootstrapInterface       $bootstrap
+     * @param \Pollo\Application\Mvc\Dispatcher\DispatcherInterface $dispatcher
+     * @param string                                                $environment
      */
     public function __construct(Bootstrap $bootstrap, Dispatcher $dispatcher, $environment)
     {
