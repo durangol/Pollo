@@ -4,7 +4,7 @@ namespace Pollo\Application;
 /**
  * A Bootstrap class to set up a Pollo Application
  */
-class Boostrap
+class Bootstrap
 {
     /**
      * The application config object
