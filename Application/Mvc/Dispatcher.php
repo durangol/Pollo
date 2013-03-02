@@ -49,4 +49,14 @@ class Dispatcher implements DispatcherInterface
         $controller->$actionName();
 	}
 
+    public function getRequest()
+    {
+        return $this->_request;
+    }
+
+    public function getResponse()
+    {
+        return $this->_response;
+    }
+
 }
