@@ -119,7 +119,7 @@ class Http
     public function send()
     {
         foreach ($this->_headers as $key => $value) {
-            header($id . ': ' . $value);
+            header($key . ': ' . $value);
         }
         echo $this->_body;
     }
