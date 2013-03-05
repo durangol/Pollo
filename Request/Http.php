@@ -47,7 +47,7 @@ class Http
      * @param string $id
      * @return mixed
      */
-    public function getGetParam($id)
+    public function getParam($id)
     {
         return isset($_GET[$id]) ? $_GET[$id] : null;
     }
@@ -57,7 +57,7 @@ class Http
      * @param string $id
      * @param mixed  $value
      */
-    public function setGetParam($id, $value)
+    public function setParam($id, $value)
     {
         $_GET[$id] = $value;
     }
@@ -66,10 +66,10 @@ class Http
      * Wrapper for setGetParam
      * @param array $get
      */
-    public function setGetParams(array $get)
+    public function setParams(array $get)
     {
         foreach ($get as $key => $value) {
-            $this->setGetParam($key, $value);
+            $this->setParam($key, $value);
         }
     }
 
