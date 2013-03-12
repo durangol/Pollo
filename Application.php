@@ -17,6 +17,11 @@ class Application
     protected $_bootstrap;
 
     /**
+     * An instance of a Router
+     * @var \Pollo\Application\Mvc\Router\RouterInterface
+     */
+
+    /**
      * An instance of the a Dispatcher
      * @var \Pollo\Application\Mvc\Dispatcher\DispatcherInterface
      */
@@ -34,9 +39,10 @@ class Application
      * @param \Pollo\Application\Mvc\Dispatcher\DispatcherInterface $dispatcher
      * @param string                                                $environment
      */
-    public function __construct(Bootstrap $bootstrap, Dispatcher $dispatcher, $environment)
+    public function __construct(Bootstrap $bootstrap, Router $router, Dispatcher $dispatcher, $environment)
     {
         $this->_bootstrap = $bootstrap;
+        $this->_router = $router;
         $this->_dispatcher = $dispatcher;
         $this->_environment = $environment;
     }
@@ -48,6 +54,7 @@ class Application
     {
         $this->_bootstrap->run($this->_environment);
         FrontController::getInstance()->setBootstrap($this->_bootstrap)
+                                      ->setRouter($this->_router) 
                                       ->setDispatcher($this->_dispatcher)
                                       ->dispatch();
     }

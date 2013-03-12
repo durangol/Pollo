@@ -39,7 +39,7 @@ class Config extends Collection
     public function __get($name)
     {
         if (!isset($this->_data[$name])) {
-            throw new Exception($name . ' does not exist');
+            throw new \Exception($name . ' does not exist');
         }
         return $this->_data[$name];
     }
