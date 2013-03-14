@@ -35,7 +35,7 @@ class Autoloader
     public function autoload($class)
     {
         foreach($this->_autoloaders as $autoloader) {
-            if ($autoloader instanceof \Pollo\Autoloader\Autoloaderinterface) {
+            if ($autoloader instanceof \Pollo\Autoloader\AutoloaderInterface) {
                 $autoloader->autoload($class);
             } 
             else if (is_callable($autoloader)) {
