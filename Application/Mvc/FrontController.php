@@ -45,6 +45,10 @@ class FrontController
 	public function dispatch()
 	{
 		$request = $this->_dispatcher->getRequest();
+		if ($this->_router->matchRoute($request)) {
+			$this->_dispatcher->dispatch();
+			$this->_dispatcher->getResponse()->send();
+		}
 
 	}
 }
