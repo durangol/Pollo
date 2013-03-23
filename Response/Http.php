@@ -17,7 +17,7 @@ class Http
      * array of HTTP headers
      * @var array
      */
-    protected $_headers;
+    protected $_headers = array();
 
     /**
      * HTTP response code
