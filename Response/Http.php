@@ -70,7 +70,7 @@ class Http
     public function setHeaders(array $headers)
     {
         foreach ($headers as $key => $value) {
-            $this->setHeader($key, $value)
+            $this->setHeader($key, $value);
         }
     }
 
