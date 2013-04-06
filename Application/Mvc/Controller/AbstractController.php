@@ -12,7 +12,7 @@ abstract class AbstractController
 	protected $_response;
 	protected $_view;
 
-	public __construct(Http $request, Http $response)
+	public function __construct(Http $request, Http $response)
 	{
 		$this->_request = $request;
 		$this->_response = $response;

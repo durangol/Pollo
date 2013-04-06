@@ -2,10 +2,12 @@
 
 namespace Pollo\Application\Mvc;
 
-class View
+use \Pollo\Application\Mvc\View\AbstractView;
+
+class View extends AbstractView
 {
 	public function render()
 	{
-		
+
 	}
 }
