@@ -34,7 +34,8 @@ class Dispatcher implements DispatcherInterface
 	}
 
     /**
-     * The dispatch function. This will get the route from the request to get the proper controller, instantiate it and call the correct action.
+     * The dispatch function. This will get the route from the request to get
+     * the proper controller, instantiate it and call the correct action.
      */
 	public function dispatch()
 	{
