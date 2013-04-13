@@ -1,10 +1,11 @@
 <?php
 namespace Pollo\Application;
 
+use Pollo\Application\Mvc\Bootstrap\BootstrapInterface;
 /**
  * A Bootstrap class to set up a Pollo Application
  */
-class Bootstrap
+class Bootstrap implements BootstrapInterface
 {
     /**
      * The application config object

@@ -7,7 +7,7 @@ use \Pollo\Application\Mvc\Router\Route\RouteInterface;
 /**
  * A wrapper for HTTP requests
  */
-class Http
+class Http implements RequestInterface
 {
     /**
      * The route for the request

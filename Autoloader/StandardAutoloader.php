@@ -29,7 +29,7 @@ class StandardAutoloader implements AutoloaderInterface
     public function autoload($class)
     {
         $didAutoload = false;
-        $file = str_replace('\\', '/', $class);
+        $file = str_replace('\\', DIRECTORY_SEPARATOR, $class);
 
         $namespace = strstr($file, DIRECTORY_SEPARATOR, true);
         $relativePath = strstr($file, DIRECTORY_SEPARATOR) . '.php';

@@ -5,7 +5,7 @@ namespace Pollo\Response;
 /**
  * The HTTP implementation of a response
  */
-class Http
+class Http implements ResponseInterface
 {
     /**
      * The response body

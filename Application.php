@@ -1,9 +1,10 @@
 <?php
 namespace Pollo;
 
-use \Pollo\Application\Bootstrap\BootstrapInterface as Bootstrap;
+use \Pollo\Application\Mvc\Bootstrap\BootstrapInterface as Bootstrap;
 use \Pollo\Application\Mvc\FrontController;
 use \Pollo\Application\Mvc\Dispatcher\DispatcherInterface as Dispatcher;
+use \Pollo\Application\Mvc\Router\RouterInterface as Router;
 
 /**
  * A facade to provide a simple interface for a Pollo Application

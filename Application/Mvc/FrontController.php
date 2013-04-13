@@ -1,9 +1,9 @@
 <?php
 
 namespace Pollo\Application\Mvc;
-use \Pollo\Application\Bootstrap\BootstrapInterface as Bootstrap;
-use \Pollo\Application\Mvc\Dispatcher\DispatcherInterface as Dispatcher;
-use \Pollo\Application\Mvc\Router\RouterInterface as Router;
+use \Pollo\Application\Mvc\Bootstrap\BootstrapInterface;
+use \Pollo\Application\Mvc\Dispatcher\DispatcherInterface;
+use \Pollo\Application\Mvc\Router\RouterInterface;
 
 class FrontController
 {
@@ -24,19 +24,19 @@ class FrontController
 		return self::$_instance;
 	}
 
-	public function setBootstrap(Bootstrap $bootstrap)
+	public function setBootstrap(BootstrapInterface $bootstrap)
 	{
 		$this->_bootstrap = $bootstrap;
 		return $this;
 	}
 
-    public function setRouter(Router $router)
+    public function setRouter(RouterInterface $router)
     {
         $this->_router = $router;
         return $this;
     }
 
-	public function setDispatcher(Dispatcher $dispatch)
+	public function setDispatcher(DispatcherInterface $dispatch)
 	{
 		$this->_dispatcher = $dispatch;
 		return $this;

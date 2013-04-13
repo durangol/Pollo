@@ -59,7 +59,7 @@ class Router implements RouterInterface
      * @param  \Pollo\Request\Abstract $request
      * @return bool
      */
-    public function matchRoute(Request $request)
+    public function matchRoute(RequestInterface $request)
     {
         $foundRoute = false;
         foreach ($this->_routes as $route) {
