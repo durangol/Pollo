@@ -13,7 +13,7 @@ class Application
 {
     /**
      * An instance of a Bootstrap
-     * @var \Pollo\Application\Bootstrap\BootstrapInterface
+     * @var \Pollo\Application\Mvc\Bootstrap\BootstrapInterfac
      */
     protected $_bootstrap;
 
@@ -36,9 +36,10 @@ class Application
 
     /**
      * Constructor
-     * @param \Pollo\Application\Bootstrap\BootstrapInterface       $bootstrap
+     * @param \Pollo\Application\Mvc\Bootstrap\BootstrapInterface   $bootstrap
+     * @param \Pollo\Application\Mvc\Router\RouterInterface         $router
      * @param \Pollo\Application\Mvc\Dispatcher\DispatcherInterface $dispatcher
-     * @param string                                                $environment
+     * @param string $environment
      */
     public function __construct(Bootstrap $bootstrap, Router $router, Dispatcher $dispatcher, $environment)
     {

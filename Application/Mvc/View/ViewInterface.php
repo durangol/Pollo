@@ -4,5 +4,5 @@ namespace Pollo\Application\Mvc\View;
 
 interface ViewInterface
 {
-	public function render();
+    public function render();
 }

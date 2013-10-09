@@ -4,5 +4,5 @@ namespace Pollo\Request;
 
 interface RequestInterface
 {
-	public function getRoute();
+    public function getRoute();
 }

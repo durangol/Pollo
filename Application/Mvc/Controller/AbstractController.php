@@ -8,14 +8,14 @@ use \Pollo\Application\Mvc;
 
 abstract class AbstractController
 {
-	protected $_request;
-	protected $_response;
-	protected $_view;
+    protected $_request;
+    protected $_response;
+    protected $_view;
 
-	public function __construct(Http $request, Http $response)
-	{
-		$this->_request = $request;
-		$this->_response = $response;
-		$this->_view = new View();
-	}
+    public function __construct(Http $request, Http $response)
+    {
+        $this->_request = $request;
+        $this->_response = $response;
+        $this->_view = new View();
+    }
 }

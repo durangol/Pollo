@@ -4,5 +4,8 @@ namespace Pollo\Response;
 
 interface ResponseInterface
 {
-	public function send();
+    /**
+     * This should send the actual response
+     */
+    public function send();
 }
